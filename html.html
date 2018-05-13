@@ -1,0 +1,109 @@
+<html><!-- this is how you start html file -->
+<!-- following is a head head section 
+     head contains a title of the page
+     scripts, fonts, css and any other things
+     you want to include or link so it can
+     be used in you html page when loading
+     -->
+<!--remeber browser downloads webpages, emages, scripts,
+    etc to the user computer before it can display it,
+    it's like they get their on copy of your website on their 
+    compueter or phone -->
+    
+ <head>
+ <!-- head used to load stuff or do things before the webpage 
+      body load, you can't do much but can get css to apply styles as the 
+      body is loading, or a script check for things like location of the user
+      if you want you side to be accessible in certain places 
+      and stop page load if condition are not met, also use to load fonts etc -->
+    <!---- the title of the webpage or website ---->
+    <title>My Library </title>
+    <!--tags are opend or started with " <> " brackets in html
+        allways they are closed by adding forward slash in them like
+        </>-->
+        <!-- not all tags are close, example input tags are only opened
+        <input>-->
+        
+        <!----attach scripts ---->
+        <!--*** JavaScript is best attached in the body
+            as a last thing before body closing tag " </body>" 
+             this is it needs to be run after all html content 
+             is loaded, because that html elements you need it to work on 
+             exist, en if the script is loaded before the html body has completed
+             loading, if the element it need to work was not loaded then JavaScript will
+             think the element does not exist, en things will break 
+             you wouldn't know what wrong cause you code is good***-->
+             
+             <!---lets add css --->
+          <link rel="stylesheet" href="mystyle.css">
+          <!-- to link resources most of time you need the link 
+               tag and add some properties/attributes
+               for css you need to specify " rel='stylesheet' "
+               you can specify type like " type='style/css' "
+               it's not needed besides above to get stuff workin -->
+            <!--the take does not have ending/closing tag "</>"
+                this type of tags are called self closing tags 
+                there are not many of them  -->
+                
+                <!--- close head it's enough for us for now---->
+  </head>
+  <!--body this is where what user see en press takes place 
+      including things that user can't see, but those are handle 
+      by JavaScript, html gives the structure of the house, 
+      css desides how things are placed, coloured, their size-->
+      
+   <!-- body start tag -->
+   <body> 
+   <!-- on the body tag you can have things like
+   <body onload="your function">
+   ____to call the function when body is loading
+   ____mostly used to redirect a user to another website or web page
+   <body style="myStyke">
+    ___this way you running script or applying css styles 
+    like you did with title and body onload would refer to a function inside the script tags in head.
+    example <head>
+               <title>My Title </title>
+               <link rel='stylesheet' here='style/mystyle.css'>
+               <script type='text/JavaScript'>
+                 my function
+                </script>
+              </head>
+    ****for css when using style='mystyle' which is only usable inside elements opening tags
+     "<p style='mystyle'> " this is called inline styling. inline styling 
+     affects things inside opening and closing tags, and is only applicable to items
+     with opening and closing tags.
+   -->
+   
+   
+   <!-- body text came added using-->
+   <h>My heading</h> <!-- for heading -->
+   <h1> Still heading</h1> <!-- adding numbers help differentiate you heading not required but use
+                                useful for styling when using non inline css method -->
+                                
+   <p>My paragraph</p> <!-- for paragraph-->
+   <code>My code</code><!-- and many more -->
+   <!-- you can use html styling also -->
+   <p> my paragraph <b>This is bold</b></p>
+   <p> my paragraph <i> This is italic</i></p>
+   
+   
+   <!-- add script -->
+   <!--to attach external script like we did with css
+   JavaScript should be called after the element it need to refer on
+   and css prefer to be called before also inline stylingb
+   takes priority in deciding style on the same element if 
+   external styling is applied on that element-->
+   
+   <script type="text/JavaScript" src="myscript.css"></script>
+   <!-- this is how you attach external script 
+   pay attention to "src" vs "href" and that the tags are not self closing-->
+   <!-- adding non external JavaScript -->
+   <script>
+  // my scripts
+  </script>
+   
+<!--close body -->
+</body>
+<!-- close html-->
+</html>
+     

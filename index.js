@@ -18,15 +18,15 @@ var user_array = [
 
 //book content db
 var array = [
-    {book_name:"book 1", book_image:"images/1.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"Once upon a time there was a guy called tsehla"}, 
-    {book_name:"book 2", book_image:"images/2.png", book_genre:"science fiction", book_category:"reality", book_available:"no", book_location:"tim.g@gmail.org", book_story:"Tsehla as the name suggest, was highly misterius"},
-    {book_name:"book 3", book_image:"images/3.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"He liked reading adventure novels, that took the characters to new and unknown places"}, 
-    {book_name:"book 4", book_image:"images/4.png",book_genre:"romantic", book_category:"fiction", book_available:"no", book_location:"Jo.j@teamb.co.za", book_story:"Since young he never liked the ordinary, he felt the world was too much and reality too real"}, 
-    {book_name:"book 5", book_image:"images/5.png", book_genre:"science fiction", book_category:"reality", book_available:"yes", book_location:"library", book_story:"When he read this novels who's characters had abilities"},
-    {book_name:"book 6", book_image:"images/6.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"They could fly, they could slice mountains with theirs swords, they could go against fate "}, 
-    {book_name:"book 7", book_image:"images/7.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"They could create their destiny and direct their future as they willed"}, 
-    {book_name:"book 8", book_image:"images/8.png", book_genre:"science fiction", book_category:"reality", book_available:"no", book_location:"Mamello.m@earth.org", book_story:"He longed for such a world, but due to his soft nature, he couldn't stand the cruelty of world controlled by power"},
-    {book_name:"book 9", book_image:"images/9.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"He can't stand the thought of how the cruel strong take advantage of the weak. "}, 
+    {book_name:"book 1", book_image:"1.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"Once upon a time there was a guy called tsehla"}, 
+    {book_name:"book 2", book_image:"2.png", book_genre:"science fiction", book_category:"reality", book_available:"no", book_location:"tim.g@gmail.org", book_story:"Tsehla as the name suggest, was highly misterius"},
+    {book_name:"book 3", book_image:"3.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"He liked reading adventure novels, that took the characters to new and unknown places"}, 
+    {book_name:"book 4", book_image:"4.png",book_genre:"romantic", book_category:"fiction", book_available:"no", book_location:"Jo.j@teamb.co.za", book_story:"Since young he never liked the ordinary, he felt the world was too much and reality too real"}, 
+    {book_name:"book 5", book_image:"5.png", book_genre:"science fiction", book_category:"reality", book_available:"yes", book_location:"library", book_story:"When he read this novels who's characters had abilities"},
+    {book_name:"book 6", book_image:"6.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"They could fly, they could slice mountains with theirs swords, they could go against fate "}, 
+    {book_name:"book 7", book_image:"7.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"They could create their destiny and direct their future as they willed"}, 
+    {book_name:"book 8", book_image:"8.png", book_genre:"science fiction", book_category:"reality", book_available:"no", book_location:"Mamello.m@earth.org", book_story:"He longed for such a world, but due to his soft nature, he couldn't stand the cruelty of world controlled by power"},
+    {book_name:"book 9", book_image:"9.png",book_genre:"romantic", book_category:"fiction", book_available:"yes", book_location:"library", book_story:"He can't stand the thought of how the cruel strong take advantage of the weak. "}, 
     
 ];
 //get book db content and process
