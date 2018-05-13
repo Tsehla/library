@@ -1,0 +1,379 @@
+{background-color: aqua;
+ border: 1px solid green;}
+
+/* Top navi */
+#top_header{
+    width: 100%;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2em;
+}
+#home_navie {
+    display: inline-block; 
+    width: 33%;
+    height: 2em;
+}
+#category_navie{
+    display: inline-block; 
+    width: 33%;
+     height: 2em;
+}
+#login_navie{
+    display: inline-block; 
+   width: 30%; 
+     height: 2em;
+}
+
+/*book container*/
+#books_container{
+    height: auto;
+    width: 100%; 
+}
+/*book elements*/
+/* properties controlled in js*/
+
+ /*book detail pop*/
+#book_pop_container{
+  position: absolute;
+  top:3%;
+  left:10%;
+  width: 80%;
+  height:90%;
+  background-color: white;
+  border:1px solid grey;
+ 
+}
+ #book_detail_pop_container{
+  width:100%;
+  height:100%;
+ 
+ }
+ #book_detail_pop_top{
+    width:100%;
+    height:10%;
+    text-align: center;
+    line-height:50px;
+    vertical-align: middle;
+ }
+ #book_detail_pop_center{
+    width:100%;
+    height: 60%;
+ }
+ #book_detail_pop_bottom{
+    width:100%;
+    height: 30%;
+ }
+ /* book detail pop child elments */
+ /*top*/
+ #book_title{
+    display:inline-block;
+    width:75%;
+    height:100%;
+ }
+ #book_detail_pop_close{
+    display: inline-block;
+    width:20%;
+    height:100%;
+    float: right;
+ }
+ #book_detail_pop_close button{
+   margin-left: 10%;
+   height: 80%;
+   width: 80%;
+   border: 1px solid black;
+   border-radius:50%;
+ }
+ /*center*/
+ #book_cover{
+ display: inline-block;
+ width:40%;
+ height:80%;
+ 
+}
+#book_cover_enlarge_button {/*issue implementing need extra work*/
+ float: left;
+ display: inline-block;
+ width:40%;
+ height:10%;
+}
+#book_status_details{
+display: inline-block;
+float: right;
+height:80%;
+width:58%;
+}
+#book_status_details div{
+    margin-top: 25%;
+    margin-bottom: 23%;
+}
+#book_status_details button{
+    width:97%;
+    height: 15%;
+}
+#book_location{
+ margin-top:5%;
+ height:20%;
+ width:100%;
+}
+#book_detail_pop_bottom h1{
+ font-size: 1.2em;
+  margin-top: 0px;
+  margin-left: 2px;
+  margin-bottom: 10px;
+}
+#book_story{
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+/* login or register*/
+/*register*/
+#register_container{
+    position : fixed;
+    top : 10%;
+    left : 5%;
+    width : 90%;
+    height : 50%;
+    background-color : white;
+    border : 2px solid green;
+
+}
+#register_text{
+  display : inline-block;
+  float : left;
+  width : 80%;
+  height : 10%;
+  text-align : center;
+  line-height : 40px;
+  vertical-align : middle;
+}
+#register_close{
+   display : inline-block;
+   float : left;
+   width : 20%;
+   height : 10%;
+   }
+#register_close button{
+   height : 50%;
+   width : 30%;
+   border: 1px solid grey;
+   border-radius : 60%;
+   margin-left : 50%;
+   margin-top : 10%;
+}
+#register_name_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#register_password_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#register_password_input_confirm{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#register_phone_number_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#register_register_div{
+    display : inline-block;
+    float : left;
+    height : 20%;
+    width : 48%;
+    margin : 1%;
+}
+#register_register_div button{
+    width : 100%;
+    height : 100%;
+}
+#register_login_div{
+    display : inline-block;
+    float : left;
+    height : 20%;
+    width : 48%;
+    margin : 1%;
+}
+#register_login_div button{
+    width : 100%;
+    height : 100%;
+}
+/* login */
+/*register*/
+#login_container{
+    position : fixed;
+    top : 20%;
+    left : 5%;
+    width : 90%;
+    height : 40%;
+    background-color : white;
+    border : 2px solid green;
+}
+#login_text{
+  display : inline-block;
+  float : left;
+  width : 80%;
+  height : 10%;
+  text-align : center;
+  line-height : 40px;
+  vertical-align : middle;
+}
+#login_close{
+   display : inline-block;
+   float : left;
+   width : 20%;
+   height : 10%;
+   }
+#login_close button{
+   height : 50%;
+   width : 30%;
+   border: 1px solid grey;
+   border-radius : 60%;
+   margin-left : 50%;
+   margin-top : 10%;
+}
+#login_name_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#login_password_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#login_login_div{
+    display : inline-block;
+    float : left;
+    height : 20%;
+    width : 48%;
+    margin : 1%;
+}
+#login_login_div button{
+    width : 100%;
+    height : 100%;
+}
+#login_register_div{
+    display : inline-block;
+    float : left;
+    height : 20%;
+    width : 48%;
+    margin : 1%;
+}
+#login_register_div button{
+    width : 100%;
+    height : 100%;
+}
+#forgot_password{
+   width : 98%;
+   height : 10%; 
+   margin-top: 10%;
+   margin-left : 1%;
+}
+/* forgot password */
+#forgot_password_container{
+    position : fixed;
+    top : 10%;
+    left : 5%;
+    width : 90%;
+    height : 50%;
+    background-color : white;
+    border : 2px solid green;
+
+}
+#forgot_password_text{
+  display : inline-block;
+  float : left;
+  width : 80%;
+  height : 10%;
+  text-align : center;
+  line-height : 40px;
+  vertical-align : middle;
+}
+#forgot_password_close{
+   display : inline-block;
+   float : left;
+   width : 20%;
+   height : 10%;
+   }
+#forgot_password_close button{
+   height : 50%;
+   width : 30%;
+   border: 1px solid grey;
+   border-radius : 60%;
+   margin-left : 50%;
+   margin-top : 10%;
+}
+#forgot_password_name_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#forgot_password_phone_number_input{
+   width : 98%;
+   height : 10%;
+   border : 1px solid grey;
+   margin : 1%;
+}
+#forgot_password_get_password{
+   width : 98%;
+   height : 20%;
+   margin-top : 3%;
+   margin-bottom : 3%;
+   margin-left : 1%;
+}
+#forgot_password_register_div{
+    display : inline-block;
+    float : left;
+    height : 20%;
+    width : 48%;
+    margin : 1%;
+}
+#forgot_password_register_div button{
+    width : 100%;
+    height : 100%;
+}
+#forgot_password_login_div{
+    display : inline-block;
+    float : left;
+    height : 20%;
+    width : 48%;
+    margin : 1%;
+}
+#forgot_password_login_div button{
+    width : 100%;
+    height : 100%;
+}
+
+
+/* admin book add */
+#float_book_add{
+   width : 13%; 
+   height : 8%;
+   position: fixed;
+   right : 2%;
+   bottom : 2%;
+   background-color : transparent;
+   }
+#float_book_add button {
+   width : 100%;
+   height : 100%;
+   font-size : 30px;
+   border: 9px solid brown;
+   border-radius : 50%;
+   background-color: green;
+}
