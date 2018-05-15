@@ -205,6 +205,7 @@ function login_logout(){
      var logout = confirm("You are about to logout, continue?");
      if(logout == true){
         logged_in_user = null;
+         is_user_admin = null;//logging out admin
         dom_book_content_fill("login_navie", "LogIn");
      }
   }
@@ -386,8 +387,58 @@ var id = id[12];
     pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation);
     document.getElementById("book_button"+id).style.display = "block";
     
-    }
-   
+    }  
 }
+var is_user_admin = null;
+/*admin tools*/
+function admin_tool(){
+    if(is_user_admin == null || is_user_admin == undefined){
+        return admin_user_content_show_hide("show");
+    }
+    else{
+        return admin_user_password_confirm();
+    }
+}
+
+function admin_user_password_confirm(){//check admin user password input
+    
+    var admin_password_input = document.getElementById("user_admin_password_input").value;
+    if(admin_password_input != "" && logged_in_user != null || logged_in_user != undefined){//forcing user to login first, but admin will get admin priveladges by default
+        var loop_count;
+        for(var i = 0; i <= user_array.length; i++){//check password against admin account
+             if(user_array[i].password == admin_password_input && user_array[i].email == "admin"){
+                 admin_user_content_show_hide("hide");
+                 is_user_admin = "yes"; //the user can now use admin menu
+                 alert("hello : "+logged_in_user+". You have obtained admin rights");
+                 return ;
+             }
+            
+            loop_count = loop_count +1;
+            admin_user_password_error();//call password not found
+        }
+      function admin_user_password_error(){
+          if(loop_count == user_array.length){ 
+          return dom_book_content_fill("admin_user_text", "Password not found/incorrect");
+          }
+      }
+    }
+    else{//no password text input
+         
+         dom_book_content_fill("admin_user_text", "Please enter password, Also make sure your are looged in"); 
+         return ;
+        
+    }
+}
+function admin_user_content_show_hide(value){
+var div = document.getElementById("admin_user_content");
+    
+    if(value == "hide"){
+        return div.style.display = "none";
+    }
+    if(value == "show"){
+        return div.style.display = "block";
+    }
+}
+
 //function start -------
 start();

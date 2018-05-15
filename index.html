@@ -24,6 +24,9 @@
      #menu_close_button{
          display : none;
      }
+     #admin_user_content{
+         display : none;
+     }
         </style>    
         
     </head>
@@ -130,7 +133,7 @@ see css for details
  
 <!-- side menu -->
 <div id = "side_menu">
-<button id = "admin_tools">Admin Tools</button><!-- available to admin account only -->
+<button id = "admin_tools" onclick = "admin_tool()">Admin Tools</button><!-- available to admin account only -->
 <hr>
 <div id = "user_libray"><!-- item booked -->
 <p id = "user_library_text">My Libray</p>
@@ -140,8 +143,20 @@ see css for details
 </div>
 
 </div>
+<!-- side menu close button -->
+<button id="menu_close_button" onclick = "side_menu_hide_display('hide')">close</button>
 
-    <button id="menu_close_button" onclick = "side_menu_hide_display('hide')">close</button>
+<!-- library admin -->
+<div id = "admin_user_content">
+    <hr>
+    <span id = "admin_user_text_span"><div id = "admin_user_text">Please enter administrator password</div></span>
+    <span id = "admin_user_button_span"><button onclick = "admin_user_content_show_hide('hide')">X</button></span>
+    <br/><hr>
+    <input type = "password" placeholder = "password : admin" id = "user_admin_password_input">
+    <span id = "admin_user_ok_button"><button onclick = "admin_user_password_confirm()">Okay</button></span>
+    <span id = "admin_user_cancel_button"><button onclick = "admin_user_content_show_hide('hide')">Cancel</button></span>
+    
+    </div>    
     
 <script type="text/jscript" src="jquery.js"></script>
 <script type="text/jscript" src="index.js"></script>    
