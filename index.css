@@ -377,3 +377,50 @@ width:58%;
    border-radius : 50%;
    background-color: green;
 }
+/* side menu */
+#side_menu{
+   width : 30%;
+   height : 100%;
+   position : absolute;
+   top : 5%;
+   right : 4%;
+   background-color : white;
+   border : 1px solid blue;
+   border-top-left-radius : 20px;
+   border-bottom-left-radius : 20px;
+}
+#user_library_text{
+   margin-left : 1%;
+   border-bottom : 1px dotted grey;
+   font-weight : bolder;
+   text-decoration : underline;
+
+}
+#user_library_content{
+   margin-left : 1%;
+}
+#menu_close_button{
+    position : fixed;
+    top : 50%;
+    left : 45%;
+    width : 20%;
+    height : 15%;
+    border : 4px double blue;
+    border-radius : 50%;
+}
+#admin_tools{
+    width : 98%;
+    height : 10%;
+    
+    border-top-left-radius : 15px;
+    margin : 1%;
+
+}
+#user_library_content div{
+    border-top : 1px dotted black;
+    }
+ #user_library_content button {
+     width : 100%;
+     height : 3%;
+ 
+ }

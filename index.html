@@ -18,6 +18,12 @@
      #forgot_password_container{
          display : none;
      }
+     #side_menu{
+         display : none;
+     }
+     #menu_close_button{
+         display : none;
+     }
         </style>    
         
     </head>
@@ -120,12 +126,22 @@ see css for details
  
  <!-- admin add book -->
  
- <div id="float_book_add"><button id="float_book_add_button" onclick ='alert("coming soon when I regain my energy or intentions to continue")'>+</button></div>
+ <div id="float_book_add"><button id="float_book_add_button" onclick ='side_menu_hide_display("show")'>+</button></div>
+ 
+<!-- side menu -->
+<div id = "side_menu">
+<button id = "admin_tools">Admin Tools</button><!-- available to admin account only -->
+<hr>
+<div id = "user_libray"><!-- item booked -->
+<p id = "user_library_text">My Libray</p>
+<p id = "user_library_content"></p>
+<p id = "user_library_content_error">Library empty</p>
+<hr>
+</div>
 
-    
-    
-    
-    
+</div>
+
+    <button id="menu_close_button" onclick = "side_menu_hide_display('hide')">close</button>
     
 <script type="text/jscript" src="jquery.js"></script>
 <script type="text/jscript" src="index.js"></script>    

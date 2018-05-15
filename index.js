@@ -8,7 +8,13 @@ function dom_book_content_fill(id, value){
 function dom_input_value_get(div){
     return document.getElementById(div).value;
 }
-
+//Dom hide show
+function dom_hide_show(value, command){
+   var div = document.getElementById(value);
+   
+   if(command == "hide"){return div.style.display = "none";}
+   if(command == "show"){ return div.style.display = "block";}
+}
 //mock database format almost similar(nosql)
 //user login db
 var user_array = [
@@ -137,7 +143,8 @@ function book_booking(id){//booking requests and making
          var bookLocation = array[id].book_location;
          pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation);
          document.getElementById("book_button"+id).style.display = "none";
-         book_detail_pop_hide();  
+         book_detail_pop_hide();
+         user_library_write(id, bookName);//update library library
          }
       else{ dom_book_content_fill("book_title", "Sorry one second late, book taken");//incase get reserved by remote user few seconds before
       }
@@ -218,6 +225,7 @@ var loop_counter = 0;
              logged_in_user = user_array[i].email;
              dom_book_content_fill("login_navie", "LogOut");
              login_hide_display("hide");
+             fill_library();
              return ;
           }
         loop_counter = loop_counter + 1;
@@ -290,5 +298,96 @@ function db_fill(loginName, loginPassword, loginPhone){
        }
     }
 }
+
+/* side menu */
+function side_menu_hide_display(value){
+var div = document.getElementById("side_menu");
+var div2 = document.getElementById("menu_close_button");
+     if(value == "hide"){
+         div.style.display = "none";
+         div2.style.display = "none";
+         }
+     if(value == "show"){
+         div.style.display = "block";
+         div2.style.display = "block";
+         }
+}
+//user library
+function fill_library(){
+  var bookName = 0;
+  var id = 0;
+  var loop_counter =0;
+   if(logged_in_user != null || logged_in_user != undefined){//validation not necessary function called after login sucess
+   
+      for(var i = 0; i<=array.length; i++){
+            if(array[i].book_location == logged_in_user){
+                bookName = array[i].book_name;
+                id = i;
+                  user_library_write(id, bookName);
+            }
+        loop_counter = loop_counter + 1;
+        empty_library();
+      }
+   function empty_library(){
+      if(loop_counter == array.length){//user library empty
+       return document.getElementById("user_library_content_error").innerHTML = "You have no books borrowed. Please reserve and reload you browser";
+      }
+     }
+   }
+    else{
+        return document.getElementById("user_library_content").innerHTML = "Please login to see your library contents.";
+    }
+}
+function user_library_write(id, bookName){//add book plus button on menu
+     
+  //alert( id+" "+bookName);
+  var div_maker = '<div id="user_library_book'+id+'">'+bookName+'</div><button id="library_book'+id+'" onclick = "book_returning(id)">return</button>';
+  document.getElementById("user_library_content_error").style.display = "none";
+  $('#user_library_content').append(div_maker);
+  //document.getElementById("library_book"+id).onclick = function(){
+      //) return book_returning(id);
+       
+  //}
+} 
+function book_returning(id){/*return book*/
+                            //bug or none expected behavior
+                            //function allow book and return of same book in sigle session, 
+                            //on third try confirm not responding
+                            //so used a button since Dom fails and modified id to return 12 character
+                            //+++++ I'm thinking above solution could be unnecessarily, my junior do check if you can
+                            //by removing below var id ++++
+                            //isue Dom hide show fails
+                            //was constantly hiding div and append would create new div until things go north south
+                            //deleting div is right since append will create new one each time, comment remove below
+                            //uncomment hide function to reproduce issue
+          
+var id = id[12];
+//alert(id);
+    var confirm_ = confirm("Are you sure, you want to return the book?");
+    if(confirm_ == true){
+    array[id].book_available = "yes";
+    array[id].book_location = "library";
+    var library_book = "library_book"+id;
+    var user_library_book = "user_library_book"+id;
+    $('#'+library_book).remove();
+    $('#'+user_library_book).remove();
+    //dom_hide_show(library_book, "hide");
+    //dom_hide_show(user_library_book, "hide");
+    
+  
+    //update screen details
+    var image = array[id].book_image;
+    var bookName = array[id].book_name;
+    var bookStory = array[id].book_story;
+    var bookGenre = array[id].book_genre;
+    var bookCategory = array[id].book_category;
+    var bookAvailability = array[id].book_available;
+    var bookLocation = array[id].book_location;
+    pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation);
+    document.getElementById("book_button"+id).style.display = "block";
+    
+    }
+   
+}
+//function start -------
 start();
-///
