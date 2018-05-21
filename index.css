@@ -68,7 +68,7 @@
  #book_detail_pop_bottom{
     width:100%;
     height: 30%;
-
+    overflow: auto;
  }
  /* book detail pop child elments */
  /*top*/
