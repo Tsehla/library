@@ -1,5 +1,6 @@
 {background-color: aqua;
  border: 1px solid green;}
+ body {font-size:1.2em;}
 
 /* Top navi */
 #top_header{
@@ -13,6 +14,10 @@
     display: inline-block; 
     width: 33%;
     height: 2em;
+    background-image : url(10.png);
+    background-size : cover;
+    background-repeat : no-repeat;
+    background-position : center;
 }
 #category_navie{
     display: inline-block; 
@@ -35,7 +40,7 @@
 
  /*book detail pop*/
 #book_pop_container{
-  position: absolute;
+  position: fixed;
   top:3%;
   left:10%;
   width: 80%;
@@ -63,6 +68,7 @@
  #book_detail_pop_bottom{
     width:100%;
     height: 30%;
+
  }
  /* book detail pop child elments */
  /*top*/
@@ -146,7 +152,7 @@ width:58%;
   width : 80%;
   height : 10%;
   text-align : center;
-  line-height : 40px;
+  line-height : 1px;
   vertical-align : middle;
 }
 #register_close{
@@ -475,11 +481,133 @@ admin_user_cancel_button{
 }
 #admin_user_cancel_button button{
     margin-left : 0%;
-     width : 19%;
+    width : 19%;
+}
+/* admin tools */
+#admin_tool_choices{
+    position : absolute;
+    right : 10%;
+    left : 10%;
+    width : 80%;
+    height : 90%;
+    background-color : white;
+    border : 1px solid grey;
+
+}
+#admin_tool_users{
+    display : inline-block;
+    width : 46%;
+    height : 50%;
+    border : 1px solid grey;
+    margin-left : 2%;
+   
+}
+#admin_tool_books{
+    display : inline-block;
+    float : right;
+    width : 46%;
+    height : 50%;
+    border : 1px solid grey;
+    margin-right : 2%;
+    
+
+}
+#admin_tool_stats{
+    width : 95.5%;
+    height : 48.4%;
+    border : 1px solid grey;
+    margin-left : 2%;
+    margin-top : 2%;
 }
 
+#admin_tool_close{
+    position : absolute;
+    right : 0;
+    top : 0;
+    width : 10%;
+    height : 5%;
+    font-size: 1em;
+
+}
+#tools_work_space{
+    position : absolute;
+    right : 10%;
+    left : 10%;
+    width : 80%;
+    height : auto;
+    background-color : white;
+    border : 1px solid grey;
+}
+#work_space_text_container{
+    width : 100%;
+    height : 5%; 
+}
+#work_space_text{
+    display : inline-block;
+    width : 87%;
+    height : 100%;
+    text-align: center;
+    vertical-align : middle;
+    line-height : 2.5em;
+}
+#work_space_close{
+    width : 10%;
+    height : 100%;
+    float : right;
+    margin-top : 2%;
+    margin-right : 2%;
+}
+#work_space_close button{
+    width : 90%;
+    height : 90%;
+}
+#work_space_content{
+      width : 96%;
+      height : auto;
+      margin : 2%;
+      border : 1px dotted blue;
+      background-color : white;
+}
+#work_space_content input{
+      width : 100%;
+      height : 15%;
+      margin : 1px solid grey;
+}
+#add_book_button{
+      width : 100%;
+      height : 6%;
+}
+/*footer*/
+#footer{
+   position : fixed;
+   bottom : 0px;
+   left : 0%;
+   width : 100%;
+   height : 3.5%;
+   background-color : grey;
+}
+#bib{
+     float : left;
+     width : 80%;
+     height : 95%;
+     background-color: white;
+     margin : 1%;
+     text-align: center;
+     background-image : url(10.png);
+     background-size : cover;
+     background-repeat : no-repeat;
+     background-position : center;
+}
+#logo{
+     float : right;
+     width : 15%;
+     height : 95%;
+     margin : 1%;
+     background-image : url(10.png);
+     background-size : cover;
+     background-repeat : no-repeat;
+     background-position : center;
 
 
 
-
-
+}

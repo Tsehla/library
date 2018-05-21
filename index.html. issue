@@ -28,14 +28,7 @@
          display : none;
      }
      #admin_tool_choices{
-     
-         display : none;
-         
-     }
-     #tools_work_space{
-     
-        display : none;
-        
+        /* display : none; */
      }
     
         </style>    
@@ -45,20 +38,13 @@
     <!--nav bar header -->
     
 <div id="top_header">
-    <span id="home_navie">BiB</span>
+    <span id="home_navie">Home</span>
     <span id="category_navie">Category</span>
     <span id="login_navie" onclick = "login_logout()" >LogIn</span>
     </div>
 <hr>
 <!-- books container -->
-<div id="books_container"> 
-<!-- footer -->
-<div id = "footer">
-<span id = "bib">BiB The power in books</span>
-<span id = "logo"></span>
-</div>
-</div>
-
+<div id="books_container"> </div>
 
 <!-- book detail pop -->
     <div id="book_pop_container">
@@ -159,28 +145,26 @@ see css for details
  <span id = "admin_tool_users">
     <h3>Users</h3>
   <hr>
- <p><a onclick = "user_authorize()" href = "#">Authorize a user</a></p>
- <p><a onclick = "user_authorize()" href = "#">See users details</a><p>
- <p><a onclick = "user_authorize()" href = "#">Remove a user</a></p>
+ <p><a href = "#">Authorize a user</a></p>
+ <p><a href = "#">See users details</a><p>
+ <p><a href = "#">Remove a user</a></p>
  </span>
  
  <div id = "admin_tool_books">
  <h3>Books</h3>
  <hr>
- <p><a href = "#" onclick = "books_add()">Add a book</a></p>
- <p><a href = "#" onclick = "books_remove()">Remove a book</a>
+ <p><a href = "#">Add a book</a></p>
+ <p><a href = "#">Remove a book</a>
  </div>
  
  <div id = "admin_tool_stats">
  <h3>Stats</h3>
  <hr>
- <p><a href = "#" onclick = "view_stats()">View booking history</a></p>
- <p><a href = "#"onclick = "view_stats()">View bookings per book</a></p>
+ <p><a href = "#">View booking history</a></p>
+ <p><a href = "#">View bookings per book</a></p>
  </div>
  
  </div>
- 
- 
  <!-- tools work space -->
  <div id = "tools_work_space">
  <div id = "work_space_text_container">
@@ -188,11 +172,10 @@ see css for details
  <span id = "work_space_close"><button onclick = "admin_tool_work_space_close()">x</button></span>
  </div>
  <hr>
- <!-- work space content -->
- <div id = "work_space_content"></div> 
+<!-- work space content -->
+<div id = "work_space_content"></div> 
  
  </div>
- 
  
  
  
