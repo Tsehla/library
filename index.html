@@ -37,7 +37,10 @@
         display : none;
         
      }
-    
+    #notification_container{
+        display : none;
+     }
+     
         </style>    
         
     </head>
@@ -51,7 +54,11 @@
     </div>
 <hr>
 <!-- books container -->
-<div id="books_container"> 
+<div id="books_container">
+<div style = "width : 100%; height : 6%; color : blue;" onclick = "pop_notification()" id = "notification_container"> <!-- notifications -->
+<div id = "notification_text_change"></div>
+<hr>
+</div>
 <!-- footer -->
 <div id = "footer">
 <span id = "bib">BiB The power in books</span>
@@ -152,7 +159,7 @@ see css for details
  
  
  
- 
+<!--admin menu items --> 
  
  <div id = "admin_tool_choices">
  <button id = "admin_tool_close" onclick = "admin_tool_close()">×</button>
@@ -168,7 +175,8 @@ see css for details
  <h3>Books</h3>
  <hr>
  <p><a href = "#" onclick = "books_add()">Add a book</a></p>
- <p><a href = "#" onclick = "books_remove()">Remove a book</a>
+ <p><a href = "#" onclick = "books_remove()">Remove a book</a></p>
+<p><a href = "#" onclick = "wish_list()">View/Edit Wish list</a></p>
  </div>
  
  <div id = "admin_tool_stats">
@@ -176,6 +184,7 @@ see css for details
  <hr>
  <p><a href = "#" onclick = "view_stats()">View booking history</a></p>
  <p><a href = "#"onclick = "view_stats()">View bookings per book</a></p>
+<p><a href = "#" onclick = "notifications_write()">Add/Remove notifications</a></p>
  </div>
  
  </div>
@@ -199,14 +208,6 @@ see css for details
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
  <!-- end of admin tools -->
  
 <!-- side menu -->
@@ -215,10 +216,11 @@ see css for details
 <hr>
 <div id = "user_libray"><!-- item booked -->
 <p id = "user_library_text">My Libray</p>
-<p id = "user_library_content"></p>
 <p id = "user_library_content_error">Library empty</p>
+<p id = "user_library_content"></p>
 <hr>
 </div>
+<button id = "library_wish_list_button" onclick = "wish_list()">Wish list</button><!-- available to all loggen in and not -->
 
 </div>
 <!-- side menu close button -->

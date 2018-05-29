@@ -3,11 +3,12 @@
 
 //make PouchDB
 //local db
-/*var db = new PouchDB("bib");
+//var db = new PouchDB("bib");
 //remote db to aync
+/*
 var online_db=new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
 //db sync function
-function //db_sync(){//call database sycing    
+function db_sync(){//call database sycing    
 db.sync(online_db)
   .then(function(sucess){ alert(JSON.stringify(sucess))
                         
@@ -24,10 +25,12 @@ db.allDocs({ //search and or filter
                         })
   .catch(function(fail){alert("online sync faulty: ")});   
 }
-//db_sync();//calling sync at first start
+db_sync();//calling sync at first start
 */
 // dom fill details of the book
-var db=new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
+
+var db =new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
+
 function dom_book_content_fill(id, value) {
   document.getElementById(id).innerHTML = value;
 }
@@ -81,15 +84,15 @@ function db_ripper(db_data, id){ //rip en preprare db data not necessary but alr
 //writes books to body
 function dom_write(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation){
 //let div be created first// haha let there be light
-var div_maker = '<div id="book'+id+'"><div id="book_image'+id+'"></div><button id="book_button'+id+'">Book</button></div>';
+var div_maker = '<div id="book'+id+'" class = "books_cover"><div id="book_image'+id+'"></div><button id="book_button'+id+'">Book</button></div>';
 
 $('#books_container').append(div_maker);
 
 var book = document.getElementById("book"+id);
 var book_image = document.getElementById("book_image"+id);
 var book_button = document.getElementById("book_button"+id);
-book.style.width = "30%";
-book.style.height = "35%";
+//book.style.width = "30%";
+//book.style.height = "35%";
 book.style.float = "left";
 book.style.margin = "1%";
 book_image.style.width = "100%";
@@ -367,7 +370,7 @@ db.get("password_"+loginName)
            register_hide_display("hide");
            login_hide_display("show");
            dom_book_content_fill("login_text", "Account created, please login.");
-           //db_sync();//calling sync updating online db
+           db_sync();//calling sync updating online db
 })
 .catch(function (error){alert("Account creation error : "+error)});
 })
@@ -415,7 +418,7 @@ function fill_library(){
 }
 function user_library_write(id, bookName){//add book plus button on menu
      
-  var div_maker = '<div id="user_library_book'+id+'">'+bookName+'</div><button id="library_book'+id+'">return</button>';
+  var div_maker = '<div id="user_library_book'+id+'" style = "width : 100%; height : auto;">'+bookName+'</div><button id="library_book'+id+'">return</button>';
   document.getElementById("user_library_content_error").style.display = "none";
   $('#user_library_content').append(div_maker);
   document.getElementById("library_book"+id).onclick = function(){
@@ -739,6 +742,151 @@ function book_removing(data){//remove book
        $('#work_space_content').append(stats_div_maker);
   }
 }
+/* notifications */
+function pop_notification(){
+       alert($("marquee").text());
+       
+}
+
+function notifications_write(){
+document.getElementById("tools_work_space").style.display = "block";
+     dom_book_content_fill("work_space_text", "<b>Notifications menu</b>");
+    
+
+ 
+ var notification_div_maker = '<input type = "text" id = "notification_input" placeholder = "Type notification text" style = "width :100%; height : 30%; font-size : 0.8em;"><hr><button id = "notification_add_button" onclick = "notification_add()" style = "width : 100%; height : 15%;">Add notifications</button><hr><button id = "notification_delete_button" onclick = "notification_delete()" style = "width : 100%; height : 15%;">Delete notifications</button>';
+
+$('#work_space_content').append(notification_div_maker);
+
+}
+function notification_make_edit(){
+
+db.get("notification_text")
+.then(function (data){
+      document.getElementById("notification_container").style.display = data.display;
+document.getElementById("notification_text_change").innerHTML = '<marquee scrollamount = "3">'+data.notification+'</marquee>';
+
+return; })
+.catch(function (data){
+  db.put({
+           _id : "notification_text",
+           display : "none",
+           notification : "hello"
+  })
+ 
+})
+}
+
+
+function notification_add(){
+var notification_input_text = document.getElementById("notification_input").value;
+
+db.get("notification_text")
+.then(function (data){
+          db.put({
+          _id : data._id,
+          _rev : data._rev,
+          display : "block",
+          notification : notification_input_text
+          })
+          .then(function (data){ alert("Success")})
+          .catch(function (data){alert(data)});
+})
+.catch(function (data){ alert (data);});
+
+
+}
+
+function notification_delete(){
+db.get("notification_text")
+.then(function (data){
+          db.put({
+          _id : data._id,
+          _rev : data._rev,
+          display : "none",
+          notification : "hello"
+          })
+          .then(function (data){ alert("Success")})
+          .catch(function (data){alert (data)});
+})
+.catch(function (data){alert (data)})
+}
+
+notification_make_edit(); //notifications starter and first run creator
+
+/*wish list*/
+function wish_list(){//wish list
+ 
+document.getElementById("tools_work_space").style.display = "block";
+dom_book_content_fill("work_space_text", "<b>Wish list</b>");
+document.getElementById("work_space_content").innerHTML ='<input type = "text" id = "wish_list_input" placeholder = "What is it you wish for?" style = "width : 100%; height : 10%;"><br /><button onclick = "wish_add()" style = "width : 100%; height : 5%;">Add wish</button><hr>';
+     
+
+db.allDocs({//find all wish related docs
+            include_docs: true,
+            startkey: 'wish_',
+            endkey: 'wish_\ufff0'
+ })
+.then(function (data){
+      
+var array = data.rows;
+  for(var i = 0; i <= array.length; i++){  
+     wish_list_filler(array[i].doc);
+      
+  }                     
+                       
+})
+.catch(function(data){//if list doesn't exist
+ /* this keeps activating with empty error----
+   $('#work_space_content').append('<p>List empty, please add your wish</p>');     */ 
+     });
+}
+
+
+function wish_list_filler(data){//write wish to dom
+   
+//alert(JSON.stringify(data.wish));
+       
+    
+if(logged_in_user == "admin" || is_user_admin == "yes"){ 
+var wish_list_div_maker = '<div style = "width : 100%; height : auto;"> Wish date : <em>'+data._id+'</em>.<br /><em>'+data.wish+'</em><br /><button onclick = "wish_delete(\''+data._id+'\')" style = "width : 100%; height : 5%;">Remove wish</button><hr>';
+}
+else{
+    
+    var wish_list_div_maker = '<div style = "width : 100%; height : auto;"><em>'+data.wish+'</em><hr>';
+}
+   $('#work_space_content').append(wish_list_div_maker);
+}
+
+function wish_add(){//add wish
+    
+  var date_time = new Date();
+  db.put({
+           _id : "wish_ : "+date_time,
+           wish : document.getElementById("wish_list_input").value
+        })
+  .then(function (data){ 
+      alert("Success");
+      wish_list();
+  })
+  .catch(function (data){alert("Please wait few seconds and try again. \n\rPlease ensure your internet connection is working.")});
+}
+
+function wish_delete(data){//delete wish
+    
+    db.get(data)
+    .then(function(data){
+        db.remove(data);
+    })
+    .then(function(data){
+        
+        alert("Sucess");
+        wish_list();
+    })
+    .catch(function(data){alert("Error : "+data)});
+        
+}
+
 //×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
 
 //fill fake db----
@@ -762,8 +910,8 @@ db.bulkDocs([
 /*
 
 db.allDocs({include_docs: true})
-.then((data)=>{console.log(JSON.stringify(data));})
-.catch((error)=>{alert(error);});
+.then(function(data){console.log(JSON.stringify(data));})
+.catch(function(error){alert(error);});
 */
 /*
 db.bulkDocs([

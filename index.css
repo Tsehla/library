@@ -1,5 +1,4 @@
-{background-color: aqua;
- border: 1px solid green;}
+
  body {font-size:1.2em;}
 
 /* Top navi */
@@ -49,6 +48,10 @@
   border:1px solid grey;
  
 }
+.books_cover{/*books*/
+        width: 30%;
+        height :35%;
+}
  #book_detail_pop_container{
   width:100%;
   height:100%;
@@ -68,7 +71,7 @@
  #book_detail_pop_bottom{
     width:100%;
     height: 30%;
-    overflow: auto;
+
  }
  /* book detail pop child elments */
  /*top*/
@@ -138,7 +141,7 @@ width:58%;
 /*register*/
 #register_container{
     position : fixed;
-    top : 10%;
+    top : 20%;
     left : 5%;
     width : 90%;
     height : 50%;
@@ -152,7 +155,7 @@ width:58%;
   width : 80%;
   height : 10%;
   text-align : center;
-  line-height : 1px;
+  line-height : 2em;
   vertical-align : middle;
 }
 #register_close{
@@ -292,7 +295,7 @@ width:58%;
 /* forgot password */
 #forgot_password_container{
     position : fixed;
-    top : 10%;
+    top : 20%;
     left : 5%;
     width : 90%;
     height : 50%;
@@ -386,8 +389,8 @@ width:58%;
 /* side menu */
 #side_menu{
    width : 30%;
-   height : 100%;
-   position : absolute;
+   height : 90%;
+   position : fixed;
    top : 5%;
    right : 4%;
    background-color : white;
@@ -402,8 +405,11 @@ width:58%;
    text-decoration : underline;
 
 }
-#user_library_content{
+#user_library_content{/*set append content to auto, so on add it leaves space, fix :  give append content height, but gonna cause issue when book title is multiple line*/
    margin-left : 1%;
+   height : 56.9%;
+   width : 99%;
+   overflow : scroll;
 }
 #menu_close_button{
     position : fixed;
@@ -417,7 +423,7 @@ width:58%;
 #admin_tools{
     width : 98%;
     height : 10%;
-    
+    border : 1px solid grey;
     border-top-left-radius : 15px;
     margin : 1%;
 }
@@ -426,7 +432,16 @@ width:58%;
     }
  #user_library_content button {
      width : 100%;
-     height : 3%;
+     height : 6%;
+ }
+ #library_wish_list_button{
+     position : absolute;
+     bottom : 0%;
+     width : 98%;
+     height : 10%;
+     border : 1px solid grey;
+     border-bottom-left-radius : 15px;
+     margin : 1%;
  }
 /*admin */
 #admin_user_content{
@@ -485,7 +500,8 @@ admin_user_cancel_button{
 }
 /* admin tools */
 #admin_tool_choices{
-    position : absolute;
+    position : fixed;
+    top : 5%;
     right : 10%;
     left : 10%;
     width : 80%;
@@ -529,12 +545,13 @@ admin_user_cancel_button{
     font-size: 1em;
 
 }
-#tools_work_space{
-    position : absolute;
+#tools_work_space{/* work space */
+    position : fixed;
+    top : 5%;
     right : 10%;
     left : 10%;
     width : 80%;
-    height : auto;
+    height : 90%;
     background-color : white;
     border : 1px solid grey;
 }
@@ -562,8 +579,9 @@ admin_user_cancel_button{
     height : 90%;
 }
 #work_space_content{
+      overflow : scroll;
       width : 96%;
-      height : auto;
+      height : 90%;
       margin : 2%;
       border : 1px dotted blue;
       background-color : white;
@@ -577,6 +595,7 @@ admin_user_cancel_button{
       width : 100%;
       height : 6%;
 }
+
 /*footer*/
 #footer{
    position : fixed;
@@ -608,6 +627,136 @@ admin_user_cancel_button{
      background-repeat : no-repeat;
      background-position : center;
 
+}
+
+/*media queries */
+@media only screen and (min-width: 500px) and (max-width: 749px) {
+
+ #book_pop_container{
+     width: 10%;
+     height:90%; 
+     margin-left: 10%;
+    }
+    #register_container{
+    width : 70%;
+    height : 50%;
+    margin-left: 4%;
+    }
+    #login_container{
+    width : 70%;
+    height : 50%;
+    margin-left: 4%;
+    }
+    #forgot_password_container{
+    width : 70%;
+    height : 50%;
+    margin-left: 4%;
+    }
+    #float_book_add{
+    width : 9%; 
+    height : 8%;
+    }
+    #admin_tool_choices{
+    width : 70%;
+    height : 90%; 
+    margin-left: 5%;
+    }
+    #tools_work_space{
+    width : 70%;
+    height : 90%;
+    margin-left: 5%;
+    }
+    #side_menu{
+    width : 20%;
+    height : 90%;
+    }
+    #menu_close_button{
+    left : 55%;
+    width : 18%;
+    }
+    #admin_user_content{
+     width: 70%;
+     height : 20%;
+     margin-left: 5%;
+    }
+    .books_cover{
+        width: 23%;
+        height :40%;
+    }
+    #home_navie{/*img*/
+        
+    }
+    #bib{
+        
+    }
+    #logo{
+        
+    }
+}
 
 
+/*media queries */
+@media only screen and (min-width: 750px){
+
+ #book_pop_container{
+     width: 40%;
+     height:90%; 
+     margin-left: 20%;
+    }
+    #register_container{
+    width : 50%;
+    height : 50%;
+    margin-left: 15%;
+    }
+    #login_container{
+    width : 50%;
+    height : 50%;
+    margin-left: 15%;
+    }
+    #forgot_password_container{
+    width : 50%;
+    height : 50%;
+    margin-left: 15%;
+    }
+    #float_book_add{
+    width : 5%; 
+    height : 8%;
+    }
+    #admin_tool_choices{
+    width : 50%;
+    height : 90%; 
+    margin-left: 15%;
+    }
+    #tools_work_space{
+    width : 50%;
+    height : 90%;
+    margin-left: 15%;
+    }
+    #side_menu{
+    width : 10%;
+    height : 90%;
+    }
+    #menu_close_button{
+    left : 75%;
+    width : 10%;
+    }
+    #admin_user_content{
+     width: 50%;
+     height : 20%;
+     margin-left: 15%;
+    }
+    .books_cover{
+        width: 14.5%;
+        height :55%;
+    }
+    
+    #home_navie{/*img*/
+        
+    }
+    #bib{
+        
+    }
+    #logo{
+        
+    }
 }
