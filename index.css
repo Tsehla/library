@@ -633,7 +633,7 @@ admin_user_cancel_button{
 @media only screen and (min-width: 500px) and (max-width: 749px) {
 
  #book_pop_container{
-     width: 10%;
+     width: 60%;
      height:90%; 
      margin-left: 10%;
     }
