@@ -49,7 +49,7 @@ function dom_hide_show(value, command){
 }
 
 //db get books and fill array
-var array;
+var array = [];
 
 db.allDocs({ //search and or filter
   include_docs: true,
@@ -70,8 +70,11 @@ function start(){
 for(var i=0; i<=array.length; i++){
      var db_content_data = array[i].doc;
      db_ripper(db_content_data, i);
+    
 }
 }
+
+
 function db_ripper(db_data, id){ //rip en preprare db data not necessary but alright. //db the ripper lol
      var bookName = db_data.book_name;
      var bookImage = db_data.book_image;
@@ -82,13 +85,19 @@ function db_ripper(db_data, id){ //rip en preprare db data not necessary but alr
      var bookLocation = db_data.book_location;
    dom_write(bookImage, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation); //add the book
 }
-
-//writes books to body
+//===========================================================================
+//writes books to body//
+var category_array = []; //hold category names
 function dom_write(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation){
 //let div be created first// haha let there be light
-var div_maker = '<div id="book'+id+'" class = "books_cover"><div id="book_image'+id+'"></div><button id="book_button'+id+'">Book</button></div>';
+var class_name = bookGenre.replace(/\s/g, "_").trim();//make a class for category     
+    
+var div_maker = '<div id="book'+id+'" class = "books_cover '+class_name+'"><div id="book_image'+id+'"></div><button id="book_button'+id+'">Book</button></div>';
+
+$("#category_contents_container").append('<div onclick = "category_filter(\''+class_name.trim()+'\')">'+bookGenre+'</div><hr>');
 
 $('#books_container').append(div_maker);
+category_array.push(class_name.trim());//add claas name to array
 
 var book = document.getElementById("book"+id);
 var book_image = document.getElementById("book_image"+id);
@@ -110,6 +119,31 @@ book_button.onclick = function(){ book_booking(id, bookName);}//front book butto
 pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation);
 
 }
+    
+function category_show_hide(command){
+    
+    if(command == "hide"){
+       return  document.getElementById("category_contents_container").style.display = "none";
+    }
+    if(command == "show"){
+       return  document.getElementById("category_contents_container").style.display = "block"; 
+    }
+}
+
+
+function category_filter(class_name){
+    for(var i = 0; i <= category_array.length; i++){
+        document.getElementsByClassName(class_name)[i].style.display = "none";
+       // alert(category_array.length);
+         category_show_hide('hide');
+        
+    }
+   
+    
+}
+
+
+
 function pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation){//write to popup
     document.getElementById("book_image"+id).onclick = function (){
     dom_book_content_fill("book_title", bookName);
@@ -889,6 +923,7 @@ function wish_delete(data){//delete wish
         
 }
 
+
 //×××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××
 
 //fill fake db----
@@ -906,8 +941,8 @@ db.bulkDocs([
            ]
      
 )
-.then((data)=>{console.log(data);})
-.catch((error)=>{alert(error);});
+.then(function(data){console.log(data);})
+.catch(function(error){alert(error);});
 */
 /*
 

@@ -40,6 +40,9 @@
     #notification_container{
         display : none;
      }
+     #category_contents_container{
+         display : none;
+     }
      
         </style>    
         
@@ -49,10 +52,18 @@
     
 <div id="top_header">
     <span id="home_navie">BiB</span>
-    <span id="category_navie">Category</span>
+    <span id="category_navie" onclick = "category_show_hide('show')">Category</span>
     <span id="login_navie" onclick = "login_logout()" >LogIn</span>
     </div>
 <hr>
+<!--category choser -->
+<div id = "category_contents_container" style ="width : 30%; height : auto; position: absolute; top : 5%; left : 37%; background-color : white; border : 1px solid grey; z-index : 10000">
+    
+    
+    
+    
+    </div>    
+    
 <!-- books container -->
 <div id="books_container">
 <div style = "width : 100%; height : 6%; color : blue;" onclick = "pop_notification()" id = "notification_container"> <!-- notifications -->

@@ -714,7 +714,7 @@ admin_user_cancel_button{
 
  #book_pop_container{
      width: 40%;
-     max-height:90vw; 
+     max-height:90%; 
      overflow-y : auto;
      margin-left: 20%;
     }
