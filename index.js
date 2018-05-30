@@ -3,7 +3,7 @@
 
 //make PouchDB
 //local db
-//var db = new PouchDB("bib");
+var db = new PouchDB("bib");
 //remote db to aync
 /*
 var online_db=new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
@@ -29,7 +29,9 @@ db_sync();//calling sync at first start
 */
 // dom fill details of the book
 
-var db =new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
+
+//var db =new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
+
 
 function dom_book_content_fill(id, value) {
   document.getElementById(id).innerHTML = value;
@@ -115,7 +117,7 @@ function pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvaila
     dom_book_content_fill("genre_value", bookGenre);
     dom_book_content_fill("category_value", bookCategory);
     dom_book_content_fill("book_location_name", bookLocation);
-    dom_book_content_fill("availability_value", bookAvailability);
+    dom_book_content_fill("availability_value", bookAvailability)
     pop_button_disable(bookAvailability); //pop button enable or diaable
     
 var book_cover = document.getElementById("book_cover");
