@@ -3,7 +3,7 @@
 
 //make PouchDB
 //local db
-var db = new PouchDB("bib");
+//var db = new PouchDB("bib");
 //remote db to aync
 /*
 var online_db=new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
@@ -30,7 +30,7 @@ db_sync();//calling sync at first start
 // dom fill details of the book
 
 
-//var db =new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
+var db =new PouchDB("https://cb3593e0-8b4c-47de-b5fa-0443bc6b75cc-bluemix.cloudant.com/umuzi_library");
 
 
 function dom_book_content_fill(id, value) {
