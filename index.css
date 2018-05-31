@@ -1,5 +1,10 @@
 
- body {font-size:1.2em;}
+ body {font-size:1.2em;
+       color : black;
+}
+input::placeholder{
+    color : green;
+}
 
 /* Top navi */
 #top_header{
@@ -13,20 +18,28 @@
     display: inline-block; 
     width: 33%;
     height: 2em;
-    background-image : url(10.png);
-    background-size : cover;
+    background-image : url(logo%20edited%20bib.png);
+    background-size : 40% 90%;
     background-repeat : no-repeat;
     background-position : center;
+    color: transparent;
+    background-color : black;
 }
 #category_navie{
     display: inline-block; 
     width: 33%;
      height: 2em;
 }
+#category_navie:hover{
+    background-color : darkgrey;
+}
 #login_navie{
     display: inline-block; 
    width: 30%; 
      height: 2em;
+}
+#login_navie:hover{
+    background-color : darkgrey;
 }
 
 /*book container*/
@@ -45,7 +58,7 @@
   width: 80%;
   height:90%;
   background-color: white;
-  border:1px solid grey;
+  border:2px solid black;
  
 }
 .books_cover{/*books*/
@@ -57,6 +70,7 @@
   height:100%;
  
  }
+
  #book_detail_pop_top{
     width:100%;
     height:10%;
@@ -90,7 +104,7 @@
    margin-left: 10%;
    height: 80%;
    width: 80%;
-   border: 1px solid black;
+   border: 1px solid grey;
    border-radius:50%;
  }
  /*center*/
@@ -146,7 +160,7 @@ width:58%;
     width : 90%;
     height : 50%;
     background-color : white;
-    border : 2px solid green;
+    border : 2px solid black;
 
 }
 #register_text{
@@ -175,19 +189,19 @@ width:58%;
 #register_name_input{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #register_password_input{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #register_password_input_confirm{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #register_phone_number_input{
@@ -227,7 +241,7 @@ width:58%;
     width : 90%;
     height : 40%;
     background-color : white;
-    border : 2px solid green;
+    border : 2px solid black;
 }
 #login_text{
   display : inline-block;
@@ -255,13 +269,13 @@ width:58%;
 #login_name_input{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #login_password_input{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #login_login_div{
@@ -329,13 +343,13 @@ width:58%;
 #forgot_password_name_input{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #forgot_password_phone_number_input{
    width : 98%;
    height : 10%;
-   border : 1px solid grey;
+   border : 2px solid black;
    margin : 1%;
 }
 #forgot_password_get_password{
@@ -400,7 +414,7 @@ width:58%;
 }
 #user_library_text{
    margin-left : 1%;
-   border-bottom : 1px dotted grey;
+   border-bottom : 2px dotted black;
    font-weight : bolder;
    text-decoration : underline;
 
@@ -409,7 +423,7 @@ width:58%;
    margin-left : 1%;
    height : 56.9%;
    width : 99%;
-   overflow : scroll;
+   overflow : auto;
 }
 #menu_close_button{
     position : fixed;
@@ -423,12 +437,12 @@ width:58%;
 #admin_tools{
     width : 98%;
     height : 10%;
-    border : 1px solid grey;
+    border : 2px solid black;
     border-top-left-radius : 15px;
     margin : 1%;
 }
 #user_library_content div{
-    border-top : 1px dotted black;
+    border-top : 2px dotted black;
     }
  #user_library_content button {
      width : 100%;
@@ -439,7 +453,7 @@ width:58%;
      bottom : 0%;
      width : 98%;
      height : 10%;
-     border : 1px solid grey;
+     border : 2px solid black;
      border-bottom-left-radius : 15px;
      margin : 1%;
  }
@@ -451,13 +465,14 @@ width:58%;
      width: 80%;
      height : 20%;
      background-color : white;
-     border : 1px solid grey;
+     border : 2px solid black;
      border-radius : 10px;
 }
 #admin_user_content input{
     width : 98%;
     height : 20%;
     margin: 1%;
+    border : 2px solid black;
     
 }
 #admin_user_text_span{
@@ -507,14 +522,14 @@ admin_user_cancel_button{
     width : 80%;
     height : 90%;
     background-color : white;
-    border : 1px solid grey;
+    border : 2px solid black;
 
 }
 #admin_tool_users{
     display : inline-block;
     width : 46%;
     height : 50%;
-    border : 1px solid grey;
+    border : 2px solid black;
     margin-left : 2%;
    
 }
@@ -523,7 +538,7 @@ admin_user_cancel_button{
     float : right;
     width : 46%;
     height : 50%;
-    border : 1px solid grey;
+    border : 2px solid black;
     margin-right : 2%;
     
 
@@ -531,7 +546,7 @@ admin_user_cancel_button{
 #admin_tool_stats{
     width : 95.5%;
     height : 48.4%;
-    border : 1px solid grey;
+    border : 2px solid black;
     margin-left : 2%;
     margin-top : 2%;
 }
@@ -553,7 +568,7 @@ admin_user_cancel_button{
     width : 80%;
     height : 90%;
     background-color : white;
-    border : 1px solid grey;
+    border : 2px solid black;
 }
 #work_space_text_container{
     width : 100%;
@@ -579,17 +594,17 @@ admin_user_cancel_button{
     height : 90%;
 }
 #work_space_content{
-      overflow : scroll;
+      overflow : auto;
       width : 96%;
       height : 90%;
       margin : 2%;
-      border : 1px dotted blue;
+      border : 1px solid blue;
       background-color : white;
 }
 #work_space_content input{
       width : 100%;
       height : 15%;
-      margin : 1px solid grey;
+      margin : 2px solid black;
 }
 #add_book_button{
       width : 100%;
@@ -603,31 +618,36 @@ admin_user_cancel_button{
    left : 0%;
    width : 100%;
    height : 3.5%;
-   background-color : grey;
+   background-color : white;
+   border-top : 2px solid black;
 }
 #bib{
      float : left;
      width : 80%;
      height : 95%;
      background-color: white;
-     margin : 1%;
+     margin : 0.3%;
      text-align: center;
-     background-image : url(10.png);
-     background-size : cover;
+     background-image : url(text%20edited%20bib.png);
+     background-size : 50% 90%;
      background-repeat : no-repeat;
      background-position : center;
+    color : transparent;
+    
 }
 #logo{
      float : right;
      width : 15%;
      height : 95%;
-     margin : 1%;
-     background-image : url(10.png);
-     background-size : cover;
+     margin : 0.3%;
+     background-image : url(umuzi.png);
+     background-size : 50% 95%;
      background-repeat : no-repeat;
      background-position : center;
+     border : 2px dotted black;
 
 }
+input{ border : 2px solid black;}
 
 /*media queries */
 @media only screen and (min-width: 480px) and (max-width: 1024px) {
@@ -696,14 +716,9 @@ admin_user_cancel_button{
         height : 3.5vw;
     }
     #home_navie{/*img*/
-        
+        background-size : 25% 90%;
     }
-    #bib{
-        
-    }
-    #logo{
-        
-    }
+
 }
 
 
@@ -717,6 +732,7 @@ admin_user_cancel_button{
      max-height:90%; 
      overflow-y : auto;
      margin-left: 20%;
+    
     }
     #register_container{
     width : 50%;
@@ -773,12 +789,12 @@ admin_user_cancel_button{
     }
     
     #home_navie{/*img*/
-        
+        background-size : 15% 90%;
     }
     #bib{
-        
+        background-size : 30% 90%; 
     }
     #logo{
-        
+         background-size : 30% 95%;
     }
 }

@@ -13,7 +13,7 @@ db.sync(online_db)
   .then(function(sucess){ alert(JSON.stringify(sucess))
                         
      //update arrays
-//db get books 
+db get books 
 db.allDocs({ //search and or filter
   include_docs: true,
   startkey: 'book_',
@@ -422,7 +422,7 @@ db.get("password_"+loginName)
            register_hide_display("hide");
            login_hide_display("show");
            dom_book_content_fill("login_text", "Account created, please login.");
-           db_sync();//calling sync updating online db
+          // db_sync();//calling sync updating online db
 })
 .catch(function (error){alert("Account creation error : "+error)});
 })
