@@ -64,16 +64,14 @@ db.allDocs({ //search and or filter
                return;
                })
 //.catch(function(error){ alert (error)});//getting silly error no workaround
-
 //get book db content and process
 function start(){
 for(var i=0; i<=array.length; i++){
      var db_content_data = array[i].doc;
      db_ripper(db_content_data, i);
     
+   }
 }
-}
-
 
 function db_ripper(db_data, id){ //rip en preprare db data not necessary but alright. //db the ripper lol
      var bookName = db_data.book_name;
@@ -85,25 +83,25 @@ function db_ripper(db_data, id){ //rip en preprare db data not necessary but alr
      var bookLocation = db_data.book_location;
    dom_write(bookImage, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation); //add the book
 }
-//===========================================================================
 //writes books to body//
 var category_array = []; //hold category names
 function dom_write(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation){
 //let div be created first// haha let there be light
 var class_name = bookGenre.replace(/\s/g, "_").trim();//make a class for category     
     
-var div_maker = '<div id="book'+id+'" class = "books_cover '+class_name+'"><div id="book_image'+id+'"></div><button id="book_button'+id+'">Book</button></div>';
+var div_maker = '<div id="book'+id+'" class = "books_cover '+class_name+' book_class"><div id="book_image'+id+'"></div><button id="book_button'+id+'">Book</button></div>';
 
-$("#category_contents_container").append('<div onclick = "category_filter(\''+class_name.trim()+'\')">'+bookGenre+'</div><hr>');
+//category filler    
+$("#category_contents_container").append('<div onclick = "hide_all(\''+class_name.trim()+'\')">'+bookGenre+'</div><hr>');
 
 $('#books_container').append(div_maker);
-category_array.push(class_name.trim());//add claas name to array
+category_array.push(class_name.trim());//add clas name category  to array
 
 var book = document.getElementById("book"+id);
 var book_image = document.getElementById("book_image"+id);
 var book_button = document.getElementById("book_button"+id);
-//book.style.width = "30%";
-//book.style.height = "35%";
+//book.style.width = "30%";//set in css
+//book.style.height = "35%";//set in css
 book.style.float = "left";
 book.style.margin = "1%";
 book_image.style.width = "100%";
@@ -119,8 +117,9 @@ book_button.onclick = function(){ book_booking(id, bookName);}//front book butto
 pop(image, id, bookName, bookStory, bookGenre, bookCategory, bookAvailability, bookLocation);
 
 }
-    
-function category_show_hide(command){
+
+/*category filter */
+function category_show_hide(command){//hide or show category pop
     
     if(command == "hide"){
        return  document.getElementById("category_contents_container").style.display = "none";
@@ -130,16 +129,33 @@ function category_show_hide(command){
     }
 }
 
+function category_show_all(){//show all categories
+  var x =  document.querySelectorAll(".book_class");
+   // alert(JSON.stringify(x.length));
+   // x[0].style.display = "none";
+   for(var i =0; i <= x.length; i++){
+       category_show_hide('hide');
+      document.querySelectorAll(".book_class")[i].style.display = "block";
+     }
+}
 
-function category_filter(class_name){
+function hide_all(class_name){// hide all categories
+      var x =  document.querySelectorAll(".book_class");
+      for(var i =0; i <= x.length; i++){
+            if( i == x.length){
+          category_filter(class_name);
+       }
+     document.querySelectorAll(".book_class")[i].style.display = "none";
+   }   
+}
+function category_filter(class_name){//show only selected categories
+    //alert(class_name);
     for(var i = 0; i <= category_array.length; i++){
-        document.getElementsByClassName(class_name)[i].style.display = "none";
-       // alert(category_array.length);
-         category_show_hide('hide');
         
-    }
-   
-    
+        category_show_hide("hide");
+        document.getElementsByClassName(class_name)[i].style.display = "block";
+       // alert(category_array.length);
+    } 
 }
 
 
