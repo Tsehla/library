@@ -709,8 +709,8 @@ input{ border : 2px solid black;}
      position : fixed;
     }
     .books_cover{
-        width: 21vw;
-        height :42vw;
+        width: 18vw;
+        height :30vw;
     }
     #footer{
         height : 3.5vw;
@@ -784,8 +784,8 @@ input{ border : 2px solid black;}
      margin-left: 15%;
     }
     .books_cover{
-        width: 14.5%;
-        height :55%;
+        width: 13%;
+        height :35%;
     }
     
     #home_navie{/*img*/
